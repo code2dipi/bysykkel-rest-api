@@ -11,7 +11,7 @@ Second is http://localhost:8080/ny/available, which is responsible to list out a
 
  From root directory run:
  # mvn clean install 
-When build completes  just run the project.
+When build completes  just run the project(BysykkelinfoApplication).
  
  Open chrome browser or Postman to to view the json records from both endpoints( http://localhost:8080/ny/stations ,http://localhost:8080/ny/available)
  
