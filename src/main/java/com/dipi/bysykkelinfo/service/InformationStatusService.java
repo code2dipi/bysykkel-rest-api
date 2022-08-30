@@ -1,7 +1,7 @@
 package com.dipi.bysykkelinfo.service;
 
 import com.dipi.bysykkelinfo.controller.InformationStatusController;
-import com.dipi.bysykkelinfo.customException.ResourceNotFoundException;
+import com.dipi.bysykkelinfo.customexception.ResourceNotFoundException;
 import com.dipi.bysykkelinfo.payload.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

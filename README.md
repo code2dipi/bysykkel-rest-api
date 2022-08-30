@@ -21,7 +21,7 @@ When build completes  just run the project(BysykkelinfoApplication).
  -Spring boot framework version(2.7.3)
  -Java 11
  
- -For frondend APP check: https://github.com/code2dipi/frontend-bysykkel-info.git
+ -For frontend APP check: https://github.com/code2dipi/frontend-bysykkel-info/blob/master/README.md
 
 
 

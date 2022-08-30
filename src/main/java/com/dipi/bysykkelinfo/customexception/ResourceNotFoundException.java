@@ -1,4 +1,4 @@
-package com.dipi.bysykkelinfo.customException;
+package com.dipi.bysykkelinfo.customexception;
 
 public class ResourceNotFoundException extends RuntimeException{
     public ResourceNotFoundException(String message) {
