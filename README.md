@@ -8,7 +8,7 @@ Second is http://localhost:8080/ny/available, which is responsible to list out a
 
 # How to run this project:
 - Clone or download the project from https://github.com/code2dipi/bysykkel-rest-api.git
-- From root directory run:
+ From root directory run:
  # mvn clean install 
 When build completes  just run the project.
  
