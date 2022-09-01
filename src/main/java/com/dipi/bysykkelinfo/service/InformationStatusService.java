@@ -52,7 +52,7 @@ public class InformationStatusService {
     }
 
     /**
-     * Extract required data from both lists
+     * Extract required data from both list
      * @return
      */
      public List<InformationStatus> getResultData(){

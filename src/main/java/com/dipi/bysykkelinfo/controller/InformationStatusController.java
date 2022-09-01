@@ -34,18 +34,9 @@ public class InformationStatusController {
        return informationStatusService.getStationStatus();
     }
 
-    @GetMapping("/all")
-    public Map<String,Object> printResult(){
-        return informationStatusService.getAll();
-    }
-
-    @GetMapping("/end")
-        public List<Object> getResult(){
-            return informationStatusService.getData();
-        }
-    @GetMapping("/stream")
+    @GetMapping("/result")
     public List<InformationStatus> getStream(){
-        return informationStatusService.getStreamData();
+        return informationStatusService.getResultData();
     }
 
 }
