@@ -60,7 +60,7 @@ public class InformationStatusService {
          List<InformationStation> infoStations=getStationInformation().getData().getStations();
          List<StatusStation> statusStations=getStationStatus().getData().getStations();
 
-         ArrayList<InformationStatus> al=new ArrayList<>();
+         ArrayList<InformationStatus> results=new ArrayList<>();
 
          for(int i=0;i<infoStations.size();i++){
              String name=infoStations.get(i).getName();
@@ -68,10 +68,10 @@ public class InformationStatusService {
                  Integer bikes=statusStations.get(i).getNumBikesAvailable();
                  Integer ducks=statusStations.get(i).getNumDocksAvailable();
                  InformationStatus is=new InformationStatus(name,bikes,ducks);
-                 al.add(is);
+                 results.add(is);
              }
          }
-         return al;
+         return results;
      }
 
 }
