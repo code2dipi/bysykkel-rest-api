@@ -6,6 +6,7 @@
 First one is http://localhost:8080/ny/stations, which is responsible to list out all the records from station_information.json.
 Second is http://localhost:8080/ny/available, which is responsible to list out all the station status from https://gbfs.urbansharing.com/oslobysykkel.no/station_status.json 
 The Third one is http://localhost:8080/ny/results , which  will integrate stations and available  endpoints and display results like:
+
   [
   {
   "name": "Blindern T-Bane",
@@ -19,7 +20,7 @@ The Third one is http://localhost:8080/ny/results , which  will integrate statio
   },
   ...
 ]
-- 
+
 
 # How to run this project:
 - Clone or download the project from https://github.com/code2dipi/bysykkel-rest-api.git
