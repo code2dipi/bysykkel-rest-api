@@ -1,5 +1,6 @@
 package com.dipi.bysykkelinfo.controller;
 
+import com.dipi.bysykkelinfo.payload.InformationStatus;
 import com.dipi.bysykkelinfo.payload.StatusResponseModel;
 import com.dipi.bysykkelinfo.payload.InformationResponseModel;
 import com.dipi.bysykkelinfo.service.InformationStatusService;
@@ -7,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -28,6 +32,20 @@ public class InformationStatusController {
     @GetMapping("/available")
     public StatusResponseModel getAvailable() {
        return informationStatusService.getStationStatus();
+    }
+
+    @GetMapping("/all")
+    public Map<String,Object> printResult(){
+        return informationStatusService.getAll();
+    }
+
+    @GetMapping("/end")
+        public List<Object> getResult(){
+            return informationStatusService.getData();
+        }
+    @GetMapping("/stream")
+    public List<InformationStatus> getStream(){
+        return informationStatusService.getStreamData();
     }
 
 }

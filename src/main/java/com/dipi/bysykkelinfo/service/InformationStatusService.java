@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class InformationStatusService {
@@ -49,6 +51,27 @@ public class InformationStatusService {
         throw new ResourceNotFoundException("ressurser ble ikke funnet");
     }
 
+    /**
+     * Extract required data from both lists
+     * @return
+     */
+     public List<InformationStatus> getResultData(){
 
+         List<InformationStation> infoStations=getStationInformation().getData().getStations();
+         List<StatusStation> statusStations=getStationStatus().getData().getStations();
+
+         ArrayList<InformationStatus> al=new ArrayList<>();
+
+         for(int i=0;i<infoStations.size();i++){
+             String name=infoStations.get(i).getName();
+             if(i< statusStations.size()){
+                 Integer bikes=statusStations.get(i).getNumBikesAvailable();
+                 Integer ducks=statusStations.get(i).getNumDocksAvailable();
+                 InformationStatus is=new InformationStatus(name,bikes,ducks);
+                 al.add(is);
+             }
+         }
+         return al;
+     }
 
 }
