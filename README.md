@@ -37,7 +37,8 @@ When build completes  just run the project(BysykkelinfoApplication).
  - Spring boot framework version(2.7.3)
  - Java 11
  - Maven (build tools)
- -For frontend APP check: https://github.com/code2dipi/frontend-bysykkel-info/blob/master/README.md
+
+ For frontend APP check: https://github.com/code2dipi/frontend-bysykkel-info/blob/master/README.md
 
 
 
