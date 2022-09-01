@@ -26,6 +26,10 @@ public class InformationStatusService {
     @Value("${available-station.url}")
     private String AvailableServiceUrl;
 
+    /**
+     * Return Station information
+     * @return Response
+     */
     public  InformationResponseModel getStationInformation() {
         InformationResponseModel response = restTemplate.getForObject(stationServiceURL, InformationResponseModel.class);
         List<InformationStation> stations = response.getData().getStations();
@@ -39,6 +43,10 @@ public class InformationStatusService {
         throw new ResourceNotFoundException("ressurser ble ikke funnet");
     }
 
+    /**
+     * Return Station status response
+     * @return Response
+     */
     public StatusResponseModel getStationStatus(){
         StatusResponseModel response = restTemplate.getForObject(AvailableServiceUrl, StatusResponseModel.class);
         if(response!=null){
@@ -52,8 +60,8 @@ public class InformationStatusService {
     }
 
     /**
-     * Extract required data from both list
-     * @return
+     * Extract required data from both endpoints and return sorted information status list.
+     * @return Sorted information list.
      */
      public List<InformationStatus> getResultData(){
 
@@ -63,15 +71,21 @@ public class InformationStatusService {
          ArrayList<InformationStatus> results=new ArrayList<>();
 
          for(int i=0;i<infoStations.size();i++){
+             String stationId=infoStations.get(i).getStationId();
              String name=infoStations.get(i).getName();
+             String address=infoStations.get(i).getAddress();
+
              if(i< statusStations.size()){
                  Integer bikes=statusStations.get(i).getNumBikesAvailable();
                  Integer ducks=statusStations.get(i).getNumDocksAvailable();
-                 InformationStatus is=new InformationStatus(name,bikes,ducks);
+                 InformationStatus is=new InformationStatus(stationId,name,address,bikes,ducks);
                  results.add(is);
              }
          }
-         return results;
+         Comparator<InformationStatus> informationStatusComparator = Comparator
+                 .comparing(InformationStatus::getName);
+
+         return results.stream().sorted(informationStatusComparator).collect(Collectors.toList());
      }
 
 }
