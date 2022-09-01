@@ -1,5 +1,5 @@
 # bysykkel-rest-api
-- The purpose of this API is to consume Real-time-information of Bycycle information from https://oslobysykkel.no/apne-data/sanntid.
+- This API will integrate Real-time-information of Bycycle from https://oslobysykkel.no/apne-data/sanntid.
 - The API will consume service from https://gbfs.urbansharing.com/oslobysykkel.no/station_information.json and https://gbfs.urbansharing.com/oslobysykkel.no/station_status.json
 
 - Three endpoints has been created in this application: 
